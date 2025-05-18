@@ -36,7 +36,8 @@ export default function LiveCam() {
     const video = videoRef.current;
     if (Hls.isSupported()) {
       const hls = new Hls();
-      hls.loadSource("https://camera-controller-gfyf.onrender.com/proxy-stream");
+      hls.loadSource("https://camera-controller-gfyf.onrender.com/stream-proxy/playlist.m3u8");
+
 
       hls.attachMedia(video);
     } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
