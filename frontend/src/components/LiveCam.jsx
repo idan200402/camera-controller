@@ -36,7 +36,8 @@ export default function LiveCam() {
     const video = videoRef.current;
     if (Hls.isSupported()) {
       const hls = new Hls();
-      hls.loadSource("https://video.weather2day.co.il:4438/live/hermon/playlist.m3u8");
+      hls.loadSource("https://camera-controller-gfyf.onrender.com/proxy-stream");
+
       hls.attachMedia(video);
     } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
       video.src = "https://video.weather2day.co.il:4438/live/hermon/playlist.m3u8";
